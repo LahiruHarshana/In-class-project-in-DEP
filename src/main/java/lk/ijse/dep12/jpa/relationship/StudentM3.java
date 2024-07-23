@@ -17,7 +17,7 @@ import java.time.LocalDate;
  * @mailto : lharshana2002@gmail.com
  * @created : 2024-07-23, Tuesday
  **/
-public class StudentM2 {
+public class StudentM3 {
     public static void main(String[] args) {
         try (EntityManagerFactory emf = JpaUtil.getEntityManagerFactory();
              EntityManager em = emf.createEntityManager()) {
@@ -32,10 +32,12 @@ public class StudentM2 {
 
 
                 Course c001 = em.find(Course.class, "C001");
-                Enroll e001 = new Enroll("Malsha", Date.valueOf(LocalDate.now()), s002, c001);
+                Course c002 = em.find(Course.class, "C002");
 
-                em.persist(e001);
 
+                Enroll lahiru = new Enroll(s001, c002, "Lahiru", Date.valueOf(LocalDate.now()));
+
+                em.persist(lahiru);
                 transaction.commit();
 
             }catch (Throwable t){
