@@ -39,7 +39,6 @@ public class StudentM3 {
 
                 em.persist(lahiru);
                 transaction.commit();
-
             }catch (Throwable t){
                 transaction.rollback();
                 t.printStackTrace();
