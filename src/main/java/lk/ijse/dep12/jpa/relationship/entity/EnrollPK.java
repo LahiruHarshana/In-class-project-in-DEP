@@ -19,6 +19,6 @@ import lombok.NoArgsConstructor;
 public class EnrollPK {
     @Column(name = "student_id")
     private String studentId;
-    @Column(name = "course_id")
-    private String courseId;
+    @Column(name = "course_code")
+    private String courseCode;
 }
